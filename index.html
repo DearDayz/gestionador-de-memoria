@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jamie Goodson's Website</title>
+    <title>Simulación de Gestión de Memoria</title>
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
       rel="stylesheet"
@@ -12,8 +12,8 @@
   <body>
     <div id="mainContainer">
       <div id="title">
-        <h1>Memory Management</h1>
-        <h3>An Online Simulation</h3>
+        <h1>Gestión de Memoria</h1>
+        <h3>Una Simulación en Línea</h3>
       </div>
 
       <div id="rightContainer">
@@ -28,48 +28,76 @@
       </div>
 
       <div id="leftContainer">
-        <h2>Add Process</h2>
+        <h2>Agregar Proceso</h2>
         <form id="processForm">
           <input
             type="text"
             name="processSize"
-            placeholder="Process size"
+            placeholder="Tamaño del proceso"
             autocomplete="off"
           />
           <input
             type="text"
             name="processTime"
-            placeholder="Process time"
+            placeholder="Tiempo del proceso"
             autocomplete="off"
           />
           <button type="submit" style="display: none"></button>
         </form>
 
-        <button id="compactButton">Compactar Memoria</button>
+        <button id="compactButton" class="c-button c-button--gooey">
+          Compactar Memoria
+          <div class="c-button__blobs">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </button>
 
         <br /><br />
-        <h2>Process Queue</h2>
+        <h2>Cola de Procesos</h2>
         <table id="processTable">
           <tr>
-            <th>Process ID</th>
-            <th>Size (K)</th>
-            <th>Time Units Remaining</th>
+            <th>ID del Proceso</th>
+            <th>Tamaño (K)</th>
+            <th>Unidades de Tiempo Restantes</th>
           </tr>
         </table>
         <br /><br />
 
         <div id="swappingControls">
           <h2>Swapping</h2>
-          <input type="text" id="swapProcessId" placeholder="Process ID" />
-          <button id="swapOutButton">Swapping</button>
-          <button id="swapInButton">Inversa</button>
+          <input type="text" id="swapProcessId" placeholder="ID del Proceso" />
+          <button id="swapOutButton" class="c-button c-button--gooey">
+            Swapping
+            <div class="c-button__blobs">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+          <button id="swapInButton" class="c-button c-button--gooey">
+            Inversa
+            <div class="c-button__blobs">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
         </div>
 
         <div id="relocationControls">
           <h2>Reubicación</h2>
           <input type="text" id="relocateProcessId" placeholder="ID Proceso" />
           <input type="text" id="relocateBlockNumber" placeholder="N° Bloque" />
-          <button id="relocateButton">Reubicar</button>
+          <button id="relocateButton" class="c-button c-button--gooey">
+            Reubicar
+            <div class="c-button__blobs">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
         </div>
 
         <div id="logBoxContainer">
@@ -77,6 +105,29 @@
         </div>
       </div>
     </div>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      style="display: block; height: 0; width: 0"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="10"
+            result="blur"
+          ></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
+          ></feColorMatrix>
+          <feBlend in="SourceGraphic" in2="goo"></feBlend>
+        </filter>
+      </defs>
+    </svg>
 
     <script src="script.js"></script>
   </body>
