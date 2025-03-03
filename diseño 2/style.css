@@ -1,0 +1,217 @@
+body {
+  font-family: "Orbitron", sans-serif;
+  background-color: #000;
+  color: #0f0;
+  padding: 0;
+  margin: 0;
+  font-size: 12pt;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 40pt;
+  margin: 0;
+  margin-bottom: 20px;
+  line-height: 1;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+h2 {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+h3 {
+  font-size: 16pt;
+  color: #0f0;
+  margin: 0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+#title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#mainContainer {
+  width: 70%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#leftContainer {
+  float: left;
+  width: 50%;
+}
+
+#rightContainer {
+  float: right;
+  width: 50%;
+}
+
+#memoryContainer,
+#virtualMemoryContainer {
+  float: left;
+  margin-left: 20px;
+  width: 150px;
+  height: 80vh;
+  border: 2px solid #0f0;
+  box-shadow: 0 0 10px #0f0;
+}
+
+#memory,
+#virtualMemory {
+  float: right;
+  width: 150px;
+  height: 100%;
+}
+
+#block {
+  box-sizing: border-box;
+  border: 1px solid #0f0;
+  width: 100%;
+  background-color: #000;
+}
+
+#blockLabel {
+  text-align: center;
+  font-weight: bold;
+  padding: 2px;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+#logBoxContainer {
+  width: 100%;
+  float: left;
+  font-family: "Orbitron", monospace;
+  height: 200px;
+  overflow: hidden;
+  border: 2px solid #0f0;
+  box-shadow: 0 0 10px #0f0;
+  margin-top: 20px;
+}
+
+#logBox {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding: 10px;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 0.9em;
+  display: block; /* Ahora visible por defecto */
+}
+
+#logBox::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+
+#logBox::-webkit-scrollbar-thumb {
+  background: #0f0;
+  box-shadow: 0 0 5px #0f0;
+}
+
+.available {
+  background-color: #0f0;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.unavailable {
+  background-color: #ff0000;
+  box-shadow: 0 0 15px #ff0000;
+  border: 1px solid #ff0000;
+}
+
+#processTable {
+  width: 400px;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+#processTable th {
+  text-align: left;
+  padding-right: 20px;
+}
+
+#processTable td {
+  color: #0f0;
+}
+
+input {
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid #0f0;
+  border-radius: 6px;
+  width: 200px;
+  margin: 10px;
+  margin-left: 0;
+  background-color: #000;
+  color: #0f0;
+  box-shadow: 0 0 5px #0f0;
+}
+
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 2px solid #0f0;
+  font-size: 14px;
+  background-color: #000;
+  color: #0f0;
+  box-shadow: 0 0 5px #0f0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 120px;
+  height: 40px;
+  border-radius: 0;
+  margin: 5px;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #0f0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 15px #0f0;
+  color: #000;
+}
+
+.animated-button:hover .circle {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 10px #0f0;
+}

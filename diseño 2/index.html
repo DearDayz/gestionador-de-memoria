@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simulador de Gestión de Memoria</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="mainContainer">
+      <div id="title">
+        <h1>Gestión de Memoria</h1>
+        <h3>Simulación en Tiempo Real</h3>
+      </div>
+
+      <div id="rightContainer">
+        <div id="memoryContainer">
+          <h2>Memoria Principal</h2>
+          <div id="memory"></div>
+        </div>
+        <div id="virtualMemoryContainer">
+          <h2>Memoria Virtual</h2>
+          <div id="virtualMemory"></div>
+        </div>
+      </div>
+
+      <div id="leftContainer">
+        <h2>Agregar Proceso</h2>
+        <form id="processForm">
+          <input
+            type="text"
+            name="processSize"
+            placeholder="Tamaño del proceso"
+            autocomplete="off"
+          />
+          <input
+            type="text"
+            name="processTime"
+            placeholder="Tiempo del proceso"
+            autocomplete="off"
+          />
+          <button type="submit" style="display: none"></button>
+        </form>
+
+        <button id="compactButton" class="animated-button">
+          <span class="text">Compactar</span>
+          <span class="circle"></span>
+        </button>
+
+        <br /><br />
+        <h2>Cola de Procesos</h2>
+        <table id="processTable">
+          <tr>
+            <th>ID Proceso</th>
+            <th>Tamaño (K)</th>
+            <th>Tiempo Restante</th>
+          </tr>
+        </table>
+        <br /><br />
+
+        <div id="swappingControls">
+          <h2>Swapping</h2>
+          <input type="text" id="swapProcessId" placeholder="ID Proceso" />
+          <button id="swapOutButton" class="animated-button">
+            <span class="text">Swapping</span>
+            <span class="circle"></span>
+          </button>
+          <button id="swapInButton" class="animated-button">
+            <span class="text">Inversa</span>
+            <span class="circle"></span>
+          </button>
+        </div>
+
+        <div id="relocationControls">
+          <h2>Reubicación</h2>
+          <input type="text" id="relocateProcessId" placeholder="ID Proceso" />
+          <input type="text" id="relocateBlockNumber" placeholder="N° Bloque" />
+          <button id="relocateButton" class="animated-button">
+            <span class="text">Reubicar</span>
+            <span class="circle"></span>
+          </button>
+        </div>
+
+        <div id="logBoxContainer">
+          <div id="logBox">DEBUG LOG<br /></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
