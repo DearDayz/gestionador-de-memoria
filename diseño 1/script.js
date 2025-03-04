@@ -57,8 +57,7 @@ function Process(size, time) {
         block = block.next;
       }
   
-      let spaceLeftover =
-        blockBestFit.size - (process.size + memControlBlockSize);
+      let spaceLeftover = blockBestFit.size - process.size;
   
       if (spaceLeftover > 0) {
         let newBlock = new MemControlBlock(spaceLeftover);
